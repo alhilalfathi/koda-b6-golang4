@@ -44,13 +44,13 @@ func main() {
 
 	if targetSuhu == 1 {
 		result := toF(float32(inputSuhu))
-		fmt.Printf("%d C = %f Fahrenheit\n", inputSuhu, result)
+		fmt.Printf("%d C = %.2f Fahrenheit\n", inputSuhu, result)
 	} else if targetSuhu == 2 {
 		result := toR(float32(inputSuhu))
-		fmt.Printf("%d C = %f Reamur\n", inputSuhu, result)
+		fmt.Printf("%d C = %.2f Reamur\n", inputSuhu, result)
 	} else if targetSuhu == 3 {
 		result := toK(float32(inputSuhu))
-		fmt.Printf("%d C = %f Kelvin\n", inputSuhu, result)
+		fmt.Printf("%d C = %.2f Kelvin\n", inputSuhu, result)
 	} else {
 		panic("ERROR: Nomor target konversi tidak valid")
 	}

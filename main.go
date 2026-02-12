@@ -5,6 +5,18 @@ import (
 	"koda-b6-golang4/convertion"
 )
 
+func cobalagi() {
+	fmt.Println("\n Ingin mencoba lagi?")
+	fmt.Println(" 1. Ya\n 2. Tidak")
+	fmt.Println("Masukan pilihan: ")
+	var isLanjut int
+	fmt.Scan(&isLanjut)
+	if isLanjut == 1 {
+		main()
+	} else {
+		fmt.Println("Mengakhiri program...")
+	}
+}
 func main() {
 	defer func() {
 		if r := recover(); r != nil {
@@ -37,13 +49,22 @@ func main() {
 
 	if targetSuhu == 1 {
 		result := convertion.ToF(float32(inputSuhu))
+		fmt.Println("------------------------")
 		fmt.Printf("%d C = %.2f Fahrenheit\n", inputSuhu, result)
+		fmt.Println("------------------------")
+		cobalagi()
 	} else if targetSuhu == 2 {
 		result := convertion.ToR(float32(inputSuhu))
+		fmt.Println("------------------------")
 		fmt.Printf("%d C = %.2f Reamur\n", inputSuhu, result)
+		fmt.Println("------------------------")
+		cobalagi()
 	} else if targetSuhu == 3 {
 		result := convertion.ToK(float32(inputSuhu))
+		fmt.Println("------------------------")
 		fmt.Printf("%d C = %.2f Kelvin\n", inputSuhu, result)
+		fmt.Println("------------------------")
+		cobalagi()
 	} else {
 		panic("ERROR: Nomor target konversi tidak valid")
 	}

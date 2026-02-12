@@ -1,16 +1,9 @@
 package main
 
-import "fmt"
-
-func toF(c float32) float32 {
-	return 9 / 5 * (c + 32)
-}
-func toR(c float32) float32 {
-	return 0.8 * c
-}
-func toK(c float32) float32 {
-	return c + 273
-}
+import (
+	"fmt"
+	"koda-b6-golang4/convertion"
+)
 
 func main() {
 	defer func() {
@@ -43,13 +36,13 @@ func main() {
 	fmt.Scan(&targetSuhu)
 
 	if targetSuhu == 1 {
-		result := toF(float32(inputSuhu))
+		result := convertion.ToF(float32(inputSuhu))
 		fmt.Printf("%d C = %.2f Fahrenheit\n", inputSuhu, result)
 	} else if targetSuhu == 2 {
-		result := toR(float32(inputSuhu))
+		result := convertion.ToR(float32(inputSuhu))
 		fmt.Printf("%d C = %.2f Reamur\n", inputSuhu, result)
 	} else if targetSuhu == 3 {
-		result := toK(float32(inputSuhu))
+		result := convertion.ToK(float32(inputSuhu))
 		fmt.Printf("%d C = %.2f Kelvin\n", inputSuhu, result)
 	} else {
 		panic("ERROR: Nomor target konversi tidak valid")

@@ -15,7 +15,17 @@ func toK(c float32) float32 {
 func main() {
 	defer func() {
 		if r := recover(); r != nil {
+			var opsi int
 			fmt.Println(r)
+			fmt.Println("1. Kembali ke Input")
+			fmt.Println("2. Akhiri Program")
+			fmt.Println("Masukan Pilihan: ")
+			fmt.Scan(&opsi)
+			if opsi == 1 {
+				main()
+			} else {
+				fmt.Println("Mengakhiri program...")
+			}
 		}
 	}()
 
